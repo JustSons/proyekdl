@@ -28,6 +28,7 @@
         .delay-1 { animation-delay: 0.1s; }
         .delay-2 { animation-delay: 0.2s; }
         .delay-3 { animation-delay: 0.3s; }
+        .delay-4 { animation-delay: 0.4s; }
 
         /* --- NAVBAR STYLING --- */
         .navbar {
@@ -92,7 +93,7 @@
             position: absolute; bottom: 5px; left: 0; z-index: -1; border-radius: 4px;
         }
 
-        /* --- CUSTOM 3D BUTTON (TRANSPARENT SHADOW) --- */
+        /* --- CUSTOM 3D BUTTON --- */
         .btn-3d-custom {
             font-family: 'Montserrat', sans-serif;
             font-weight: 800;
@@ -103,7 +104,6 @@
             padding: 15px 40px;
             border: 3px solid #fff;
             border-radius: 12px;
-            /* Shadow menggunakan warna background hero agar terlihat transparan/menyatu */
             box-shadow: 0 6px 0 #fceda6, 0 10px 15px rgba(0,0,0,0.1);
             transition: all 0.2s ease;
             position: relative;
@@ -141,6 +141,31 @@
         .section-title { margin-bottom: 40px; font-weight: 800; position: relative; display: inline-block; text-transform: uppercase; letter-spacing: 1px; }
         .section-title::after { content: ''; display: block; width: 60px; height: 4px; background: #f1c40f; margin: 15px auto 0; border-radius: 2px; }
 
+        /* --- VISI MISI STYLING --- */
+        .motto-box {
+            background: #fffbf0; 
+            border-left: 5px solid #f1c40f;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 40px;
+        }
+        .motto-text {
+            font-family: 'Montserrat', sans-serif;
+            font-style: italic;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: #333;
+        }
+        .list-misi li {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: flex-start;
+        }
+        .list-misi i {
+            margin-top: 5px;
+            flex-shrink: 0;
+        }
+
         /* --- VIDEO STYLING --- */
         .video-wrapper { position: relative; overflow: hidden; border-radius: 15px; cursor: pointer; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
         .video-wrapper img { width: 100%; transition: transform 0.5s ease; }
@@ -160,11 +185,10 @@
         /* --- PADLET CONTAINER --- */
         .padlet-container { width: 100%; min-height: 600px; border: none; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); background: #fff; display: flex; align-items: center; justify-content: center; overflow: hidden; padding: 10px; }
 
-        /* --- FOOTER STYLING (UPDATED) --- */
+        /* --- FOOTER STYLING --- */
         footer { margin-top: auto; background-color: #f8f9fa; padding: 80px 0 40px; color: #333; border-top: 1px solid #eaeaea; }
         .footer-title { color: #cc0000; font-weight: 800; margin-bottom: 25px; text-transform: uppercase; letter-spacing: 0.5px; }
         
-        /* Justify Text agar rapi kanan kiri */
         .footer-text-justify {
             text-align: justify;
             text-align-last: left; 
@@ -203,7 +227,7 @@
                     <li class="nav-item">
                         <a class="nav-link" id="nav-diskusi" onclick="switchPage('diskusi')">Diskusi</a>
                     </li>
-                </ul>
+                    </ul>
             </div>
         </div>
     </nav>
@@ -215,8 +239,8 @@
                     <div class="row justify-content-center">
                         <div class="col-lg-9">
                             <h1 class="display-3 hero-title mb-4 animate-in delay-1">
-                                <span class="text-dark">Tumbuh Bersama,</span> <br>
-                                <span class="text-accent-color">Menguatkan Sesama</span>
+                                <span class="text-dark"> Lawan Diskriminasi,</span> <br>
+                                <span class="text-accent-color">Ayo tunjukkan prestasi!</span>
                             </h1>
                             <p class="lead mb-5 animate-in delay-2" style="font-size: 1.25rem;">Selamat datang di website resmi Komunitas Sahabat Disabilitas. Wadah inklusif untuk berbagi, belajar, dan berkarya tanpa batas.</p>
                             
@@ -228,7 +252,7 @@
                 </div>
             </section>
 
-            <section>
+            <section class="bg-light">
                 <div class="container">
                     <div class="text-center">
                         <h2 class="section-title animate-in">Layanan Kami</h2>
@@ -275,31 +299,70 @@
         <div id="page-panduan" class="page-section d-none animate-in">
             <section class="bg-light">
                 <div class="container">
-                    <div class="text-center">
+                    <div class="text-center mb-5">
                         <h2 class="section-title animate-in">Panduan & Informasi</h2>
                     </div>
-                    <div class="row align-items-center mt-5">
-                        <div class="col-md-6 animate-in delay-1">
-                            <h3>Aksesibilitas & Etika</h3>
-                            <p class="text-muted">Memahami cara berinteraksi yang inklusif adalah langkah awal membangun masyarakat yang setara.</p>
-                            <ul class="list-group list-group-flush bg-transparent">
-                                <li class="list-group-item bg-transparent border-0 ps-0"><i class="fas fa-check-circle text-success me-2"></i> Gunakan bahasa yang memberdayakan.</li>
-                                <li class="list-group-item bg-transparent border-0 ps-0"><i class="fas fa-check-circle text-success me-2"></i> Utamakan komunikasi langsung.</li>
-                                <li class="list-group-item bg-transparent border-0 ps-0"><i class="fas fa-check-circle text-success me-2"></i> Tanyakan sebelum membantu.</li>
-                            </ul>
+                    
+                    <div class="visi-misi-wrapper mb-5 animate-in delay-1">
+                        <div class="row justify-content-center mb-4">
+                            <div class="col-lg-10">
+                                <div class="motto-box text-center shadow-sm" style="background-color: #fff;">
+                                    <span class="badge bg-warning text-dark mb-2">MOTTO KSD</span>
+                                    <h3 class="motto-text mb-0">"Lawan Diskriminasi, Ayo Tunjukkan Prestasi!"</h3>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-md-6 mt-4 mt-md-0 animate-in delay-2">
-                            <div class="bg-white p-5 shadow rounded-4 text-center border-start border-5 border-warning hover-card">
-                                <h4 class="fw-bold text-dark">Visi KSD</h4>
-                                <hr class="my-4">
-                                <p class="fst-italic lead mb-0">"Keterbatasan fisik bukanlah batas untuk berkarya."</p>
+
+                        <div class="row g-4 justify-content-center">
+                            <div class="col-md-6">
+                                <div class="card h-100 border-0 shadow-sm hover-card">
+                                    <div class="card-body p-4">
+                                        <div class="d-flex align-items-center mb-3">
+                                            <i class="fas fa-eye fa-2x text-warning me-3"></i>
+                                            <h3 class="fw-bold mb-0">Visi Kami</h3>
+                                        </div>
+                                        <p class="lead" style="font-size: 1.1rem; line-height: 1.6;">Menjadikan KSD (Komunitas Sahabat Disabilitas) sebagai rumah untuk sahabat disabilitas dalam mengembangkan bakat dan potensi diri yang dimiliki untuk berkarya dan bermanfaat untuk sesama.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="card h-100 border-0 shadow-sm hover-card" style="background: linear-gradient(to right, #ffffff, #fffdf5);">
+                                    <div class="card-body p-4">
+                                        <div class="d-flex align-items-center mb-3">
+                                            <i class="fas fa-bullseye fa-2x text-warning me-3"></i>
+                                            <h3 class="fw-bold mb-0">Misi Kami</h3>
+                                        </div>
+                                        <ul class="list-unstyled list-misi">
+                                            <li><i class="fas fa-check-circle text-warning me-3"></i> <span>Mengembangkan penyandang disabilitas</span></li>
+                                            <li><i class="fas fa-check-circle text-warning me-3"></i> <span>Meningkatkan penyadaran publik demi pemenuhan hak disabilitas</span></li>
+                                            <li><i class="fas fa-check-circle text-warning me-3"></i> <span>Meningkatkan kepercayaan & kemampuan diri</span></li>
+                                            <li><i class="fas fa-check-circle text-warning me-3"></i> <span>Mewujudkan masyarakat inklusif</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
+
+                    <div class="row justify-content-center mt-5 animate-in delay-2">
+                        <div class="col-lg-10">
+                            <div class="card border-0 bg-white shadow-sm rounded-4 p-4">
+                                <h3 class="fw-bold text-center mb-4">Aksesibilitas & Etika</h3>
+                                <p class="text-center text-muted mb-4">Memahami cara berinteraksi yang inklusif adalah langkah awal membangun masyarakat yang setara.</p>
+                                <div class="row text-start">
+                                    <div class="col-md-4 mb-3"><div class="d-flex"><i class="fas fa-check-circle text-success me-2 mt-1"></i> <div>Gunakan bahasa yang memberdayakan.</div></div></div>
+                                    <div class="col-md-4 mb-3"><div class="d-flex"><i class="fas fa-check-circle text-success me-2 mt-1"></i> <div>Utamakan komunikasi langsung.</div></div></div>
+                                    <div class="col-md-4 mb-3"><div class="d-flex"><i class="fas fa-check-circle text-success me-2 mt-1"></i> <div>Tanyakan sebelum membantu.</div></div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </section>
 
-            <section class="d-flex align-items-center" style="min-height: 50vh;">
+            <section class="d-flex align-items-center" style="min-height: 40vh;">
                 <div class="container text-center">
                     <div class="row justify-content-center">
                         <div class="col-lg-8 animate-in delay-3">
@@ -440,7 +503,7 @@
                     <div class="d-flex align-items-start mb-3">
                         <img src="logo-ksd.jpg" alt="KSD Logo" class="rounded-circle-logo" style="width: 60px; height: 60px; margin-right: 15px; flex-shrink: 0;">
                         <div>
-                            <p class="mb-0 text-muted footer-text-justify pe-2" style="line-height: 1.8;"><strong>Komunitas Sahabat Disabilitas</strong> hadir sebagai inisiatif bersama untuk menciptakan lingkungan yang inklusif, memberdayakan sesama, dan percaya bahwa setiap individu memiliki potensi luar biasa untuk berkarya.</p>
+                            <p class="mb-0 text-muted footer-text-justify pe-2" style="line-height: 1.8;"><strong>Komunitas Sahabat Disabilitas</strong> didirikan oleh 3 anak muda, yaitu Egi Hanafi, Mia Faresa, dan Fira Gusparlinsintia, kami memiliki Visi yang sama yaitu Menjadikan KSD sebagai rumah untuk sahabat disabilitas dalam mengembangkan bakat dan potensi diri yang dimiliki untuk berkarya dan bermanfaat untuk sesama. Komunitas Sahabat Disabilitas tidak hanya berfokus ke penyandang disabilitas saja. Namun, juga berfokus pada non disabilitas/ orang normal. Karena kita ingin mengedukasi masyarakat umum. Maka dari itu, KSD banyak bergerak untuk menyadarkan atau mengubah persepsi negatif di masyarakat umum terhadap penyandang disabilitas</p>
                         </div>
                     </div>
                 </div>
@@ -543,12 +606,12 @@
             }
         }
 
+        // Fungsi goToFooter sudah tidak dipakai di navbar, tapi dibiarkan aman jika dibutuhkan di masa depan
         function goToFooter() {
             switchPage('home');
             document.querySelectorAll('.nav-link').forEach(link => {
                 link.classList.remove('active');
             });
-            document.getElementById('nav-about').classList.add('active');
             setTimeout(() => {
                 document.getElementById('footer-area').scrollIntoView({ behavior: 'smooth' });
             }, 100);
